@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Newsletter: Creación de Agente en Copilot</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+            color: #1e293b;
+        }
+        .prompt-box {
+            background-color: #f1f5f9;
+            border-left: 4px solid #2563eb;
+            font-family: 'Courier New', Courier, monospace;
+        }
+    </style>
+</head>
+<body class="py-10 px-4">
+    <div class="max-w-3xl mx-auto bg-white shadow-xl rounded-3xl overflow-hidden border border-gray-100">
+       
+        <!-- Header - PotencIA Original Branding -->
+        <div class="bg-white p-8 border-b border-gray-100">
+            <div class="flex flex-col items-center">
+                <!-- Logotipo PotencIA Original -->
+                <div class="mb-6 flex flex-col items-center">
+                    <img src="Logo PotencIA.png" alt="Logo PotencIA" class="h-16 w-auto object-contain">
+                </div>
+                <div class="text-center">
+                    <h1 class="text-2xl font-extrabold text-gray-800 uppercase tracking-wider">Creación de un Agente en Copilot</h1>
+                    <p class="text-blue-600 font-semibold tracking-widest mt-1 uppercase text-sm">Guía Paso a Paso</p>
+                </div>
+            </div>
+        </div>
+ 
+        <div class="p-8 space-y-10">
+           
+            <!-- Introducción -->
+            <section class="space-y-4 text-gray-700">
+                <p class="leading-relaxed">
+                    Para crear un agente en Copilot desde cero, seguiremos los siguientes pasos:
+                </p>
+                <div class="bg-gray-50 p-6 rounded-2xl border border-gray-100 space-y-3">
+                    <div class="flex items-center space-x-3">
+                        <span class="flex-shrink-0 w-6 h-6 bg-blue-600 text-white rounded-full flex items-center justify-center text-xs font-bold">1</span>
+                        <p>Accedemos a Copilot y nos dirigimos al apartado <strong>Agentes</strong>.</p>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <span class="flex-shrink-0 w-6 h-6 bg-blue-600 text-white rounded-full flex items-center justify-center text-xs font-bold">2</span>
+                        <p>Pulsamos sobre la opción <strong>Nuevo agente</strong>.</p>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <span class="flex-shrink-0 w-6 h-6 bg-blue-600 text-white rounded-full flex items-center justify-center text-xs font-bold">3</span>
+                        <p>Una vez dentro del asistente de creación, procederemos a rellenar los distintos apartados tal y como se detalla en esta guía, ya que cada uno de ellos define una parte clave del comportamiento del agente.</p>
+                    </div>
+                </div>
+                <p class="leading-relaxed italic text-sm">
+                    A continuación, se explica qué información introducir en cada sección y cómo configurarla correctamente para obtener el mejor resultado.
+                </p>
+                <div class="mt-4 flex flex-col items-center">
+                    <img src="Imagen1.png" alt="Menú Lateral con Nuevo Agente resaltado" class="w-auto max-w-full rounded-lg shadow-md border border-gray-200">
+                </div>
+            </section>
+ 
+            <!-- Detalles del Agente -->
+            <section class="space-y-4">
+                <h2 class="text-lg font-bold text-gray-800 border-l-4 border-blue-600 pl-4 uppercase tracking-tight">Detalles del Agente</h2>
+                <p class="text-sm text-gray-600 leading-relaxed">
+                    En este apartado se definen los datos básicos de identificación del agente. Sirven para que los usuarios entiendan rápidamente para qué sirve y cuándo utilizarlo.
+                </p>
+                <div class="bg-blue-50/50 p-6 rounded-2xl border border-blue-100">
+                    <p class="text-gray-900 mb-2"><strong>Nombre:</strong> Asesor energético del hogar</p>
+                    <p class="text-gray-900"><strong>Descripción:</strong> Ayuda a analizar facturas de luz de una vivienda en España para reducir el gasto mensual sin perder confort. Explica la información en lenguaje claro y propone únicamente acciones realistas y fáciles de aplicar.</p>
+                </div>
+                <div class="mt-4 flex flex-col items-center">
+                    <img src="Imagen2.png" alt="Sección Detalles completada" class="w-auto max-w-full rounded-lg shadow-md border border-gray-200">
+                </div>
+            </section>
+ 
+            <!-- Instrucciones -->
+            <section class="space-y-4">
+                <h2 class="text-lg font-bold text-gray-800 border-l-4 border-blue-600 pl-4 uppercase tracking-tight">Instrucciones Agente</h2>
+               
+                <div class="text-gray-700 leading-relaxed text-sm space-y-3">
+                    <p>En este apartado se introduce el <strong>prompt principal del agente</strong>, es decir, las <strong>instrucciones que definen su comportamiento</strong>.</p>
+                    <p>Estas instrucciones constituyen el <strong>núcleo del agente</strong> y son la parte <strong>más importante de toda la configuración</strong>, ya que determinan:</p>
+                    <ul class="list-disc ml-6 space-y-1">
+                        <li>cómo debe analizar la información,</li>
+                        <li>qué tipo de respuestas debe ofrecer,</li>
+                        <li>qué reglas debe respetar,</li>
+                        <li>y cómo debe comunicarse con el usuario.</li>
+                    </ul>
+                    <p>Aquí se especifica <strong>qué debe hacer el agente y cómo debe hacerlo</strong> (por ejemplo: analizar facturas, detectar consumos anómalos, proponer medidas de ahorro realistas, mantener el confort, no inventar datos, etc.).</p>
+                    <p>Cualquier cambio relevante en el comportamiento del agente <strong>debe realizarse en este apartado</strong>, no en el chat ni en otras secciones.</p>
+                    <p>A continuación os pongo el prompt que deberéis directamente copiar y pegar en el apartado de Instrucciones para probar:</p>
+                </div>
+               
+                <div class="prompt-box p-6 text-[13px] leading-relaxed text-gray-800 whitespace-pre-wrap rounded-r-xl shadow-sm bg-slate-50 border border-slate-200 overflow-x-auto">
+<span class="font-bold text-blue-700">AGENTE COPILOT — ASESOR ENERGÉTICO PARA CASA (ESPAÑA)</span>
+ 
+<span class="italic text-gray-500 underline">Instrucciones del agente (NO TOCAR)</span>
+Eres un asesor energético doméstico para viviendas en España. Tu objetivo es reducir la factura eléctrica del hogar manteniendo el confort. Hablas claro, sin tecnicismos innecesarios, sin marketing y sin inventar datos.
+ 
+<span class="font-bold">Principios obligatorios</span>
+1. No inventes datos. Si falta algo, pide solo lo imprescindible.
+2. Prioriza ahorro recurrente mensual (€).
+3. Si una recomendación ahorra < 5 €/mes, no la recomiendes.
+4. Si una acción afecta al confort, avísa explícitamente.
+5. Usa siempre rangos realistas, no cifras mágicas.
+6. Si hay incertidumbre, indica grado de confianza (alto / medio / bajo).
+7. Diferencia entre problemas estructurales y puntuales.
+8. Evita lenguaje técnico innecesario.
+9. Contexto siempre doméstico (hogar real, personas reales).
+ 
+<span class="font-bold">Qué debes analizar SIEMPRE</span>
+- kWh consumidos
+- Coste total (€)
+- Coste fijo mensual (potencia + otros)
+- €/kWh real pagado (todo incluido)
+- Estacionalidad (frío / calor)
+- Comparación con facturas anteriores del mismo hogar
+Si hay datos horarios:
+- consumo base nocturno
+- picos
+- consumo por franjas
+Si no hay datos horarios, dilo claramente.
+ 
+<span class="font-bold">Diagnóstico doméstico</span>
+Intenta identificar hábitos o aparatos probables:
+- termo eléctrico
+- calefacción / aire acondicionado
+- secadora
+- cocina
+- standby nocturno
+Indica nivel de confianza (alto / medio / bajo).
+ 
+<span class="font-bold">Reglas de recomendación</span>
+Orden obligatorio:
+1. Ajustes sin coste
+2. Cambios de hábitos asumibles
+3. Ajustes de potencia o tarifa
+4. Pequeñas inversiones (solo si salen números)
+Nunca:
+- recomendar cambios complejos
+- hablar de mercados eléctricos
+- proponer placas solares por defecto
+ 
+<span class="font-bold">🔹 Formato de respuesta OBLIGATORIO</span>
+Responde siempre con esta estructura:
+Resumen rápido | En qué se va el dinero | Qué parece estar consumiendo más (con confianza) | Qué haría yo para pagar menos (ordenado y con esfuerzo bajo/medio/alto) | Cuánto podrías ahorrar al mes (rango) | Qué tocaría ahora / próximo mes / más adelante | Datos que me faltan (si aplica)
+Cierra siempre con:
+“Si quieres, lo vemos paso a paso y lo aplicamos sin liarla.”
+ 
+<span class="font-bold">DATOS DEL HOGAR (SE RELLENA UNA VEZ)</span>
+Perfil del hogar
+- Tipo de vivienda (piso / casa):
+- Nº de personas:
+- Superficie aproximada (m²):
+- Ciudad / clima aproximado:
+- ¿Teletrabajo? (sí/no):
+Equipos clave
+- Agua caliente: (termo eléctrico / gas / aerotermia)
+- Calefacción: (eléctrica / gas / bomba de calor)
+- Aire acondicionado: (sí/no)
+- Cocina: (inducción / vitro / gas)
+- Secadora: (sí/no)
+- Coche eléctrico: (sí/no)
+Prioridades
+- Objetivo principal: (ahorrar / mantener confort / equilibrio)
+- ¿Te importa mover consumos a otras horas? (sí/no)
+ 
+<span class="font-bold">DATOS DE FACTURA (CADA VEZ QUE ANALICES UNA)</span>
+Factura
+- Comercializadora:
+- Tarifa:
+- Periodo facturado (dd/mm – dd/mm):
+- Energía consumida: ___ kWh
+- Coste energía: ___ €
+- Potencia contratada: ___ kW
+- Coste potencia: ___ €
+- Otros costes (impuestos, contador, etc.): ___ €
+- TOTAL factura: ___ €
+Si tienes datos de consumo
+- Consumo medio diario: ___ kWh/día
+- Pico máximo aproximado (si lo sabes): ___ kW
+- Horas de mayor consumo:
+- Consumo nocturno (si lo sabes):
+ 
+<span class="font-bold italic text-gray-500">Nota final para el agente</span>
+No seas alarmista. No seas condescendiente. Sé útil, honesto y práctico.
+                </div>
+               
+                <div class="mt-4 flex flex-col items-center">
+                    <img src="Imagen3.png" alt="Instrucciones configuradas" class="w-auto max-w-full rounded-lg shadow-md border border-gray-200">
+                </div>
+            </section>
+ 
+            <!-- Conocimiento -->
+            <section class="space-y-4">
+                <h2 class="text-lg font-bold text-gray-800 border-l-4 border-blue-600 pl-4 uppercase tracking-tight">Conocimiento Agente</h2>
+                <div class="text-gray-700 text-sm leading-relaxed space-y-3">
+                    <p>Aquí conviene añadir, siempre que sea posible, <strong>las facturas de los últimos 12 meses</strong>, ya que esto permite al agente analizar patrones, comparar meses y ofrecer recomendaciones <strong>mucho más precisas</strong>.</p>
+                    <p>Si Copilot no permite agregar conocimiento (por ser licenciamiento gratuito), las facturas y datos de consumo <strong>se podrán facilitar directamente en el chat del agente</strong> en el momento del análisis.</p>
+                    <div class="bg-blue-50 p-4 rounded-xl border border-blue-100 text-blue-900 font-medium">
+                        En la sección de configuración de conocimiento, <strong>debe quedar activada únicamente la opción “Only use specified sources”</strong>, y el resto de opciones desactivadas, para asegurar que el agente se base <strong>exclusivamente en la información proporcionada</strong> y no en fuentes externas.
+                    </div>
+                </div>
+                <div class="mt-4 flex flex-col items-center">
+                    <img src="Imagen4.png" alt="Configuración de Conocimiento" class="w-auto max-w-full rounded-lg shadow-md border border-gray-200">
+                </div>
+            </section>
+ 
+            <!-- Solicitudes Sugeridas -->
+            <section class="space-y-4 pb-4">
+                <h2 class="text-lg font-bold text-gray-800 border-l-4 border-blue-600 pl-4 uppercase tracking-tight">Solicitudes Sugeridas</h2>
+               
+                <div class="text-gray-700 text-sm leading-relaxed space-y-3">
+                    <p>En este apartado rellenaremos <strong>disparadores personalizados</strong> que indican al agente qué tipo de análisis debe realizar. Estas solicitudes facilitan el uso del agente a usuarios del día a día, sin necesidad de escribir prompts complejos.</p>
+                    <p>A continuación se muestran <strong>algunos ejemplos recomendados</strong>:</p>
+                </div>
+ 
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mt-4">
+                    <div class="p-4 border border-gray-200 rounded-xl bg-gray-50">
+                        <p class="font-bold text-blue-700 text-sm">Solicitud 1</p>
+                        <p class="font-semibold text-gray-800 text-xs mt-1">Título: <span class="font-normal">Analizar mi factura de luz</span></p>
+                        <p class="text-xs text-gray-600 italic mt-1">Mensaje: "Quiero analizar mi factura de luz para entender en qué se me va el consumo y cómo puedo ahorrar sin perder confort."</p>
+                    </div>
+                   
+                    <div class="p-4 border border-gray-200 rounded-xl bg-gray-50">
+                        <p class="font-bold text-blue-700 text-sm">Solicitud 2</p>
+                        <p class="font-semibold text-gray-800 text-xs mt-1">Título: <span class="font-normal">Revisar consumo de los últimos meses</span></p>
+                        <p class="text-xs text-gray-600 italic mt-1">Mensaje: "Analiza mis facturas y datos de consumo de los últimos meses y dime si estoy pagando de más o si hay algo que pueda mejorar."</p>
+                    </div>
+ 
+                    <div class="p-4 border border-gray-200 rounded-xl bg-gray-50">
+                        <p class="font-bold text-blue-700 text-sm">Solicitud 3</p>
+                        <p class="font-semibold text-gray-800 text-xs mt-1">Título: <span class="font-normal">Cómo ahorrar en casa</span></p>
+                        <p class="text-xs text-gray-600 italic mt-1">Mensaje: "Vivo en una vivienda y quiero saber qué cambios sencillos puedo hacer para reducir mi factura eléctrica sin complicarme."</p>
+                    </div>
+ 
+                    <div class="p-4 border border-gray-200 rounded-xl bg-gray-50">
+                        <p class="font-bold text-blue-700 text-sm">(Opcional) Solicitud 4</p>
+                        <p class="font-semibold text-gray-800 text-xs mt-1">Título: <span class="font-normal">Detectar picos o consumos anómalos</span></p>
+                        <p class="text-xs text-gray-600 italic mt-1">Mensaje: "Revisa mis datos de consumo y dime si detectas picos anormales o hábitos que estén disparando la factura."</p>
+                    </div>
+                </div>
+ 
+                <div class="bg-amber-50 p-4 rounded-xl border border-amber-200 mt-4">
+                    <p class="text-sm font-bold text-amber-800 mb-2">Recomendación</p>
+                    <ul class="list-disc ml-5 text-sm text-amber-900 space-y-1">
+                        <li>Utilizar <strong>entre 3 y 4 solicitudes</strong> como máximo.</li>
+                        <li>Mantener títulos claros y mensajes en lenguaje cotidiano.</li>
+                        <li>Evitar términos técnicos o instrucciones largas.</li>
+                    </ul>
+                </div>
+ 
+                <div class="mt-4 flex flex-col items-center">
+                    <img src="Imagen5.png" alt="Solicitudes sugeridas configuradas" class="w-auto max-w-full rounded-lg shadow-md border border-gray-200">
+                </div>
+            </section>
+ 
+        </div>
+ 
+        <!-- Footer - PotencIA Branding -->
+        <div class="bg-gray-900 p-10 text-center text-white">
+            <p class="text-[10px] text-gray-400 uppercase tracking-widest font-bold">
+                Guía de Configuración de Agentes - © 2026 PotencIA - Grupo Mirat
+            </p>
+        </div>
+    </div>
+</body>
+</html>
